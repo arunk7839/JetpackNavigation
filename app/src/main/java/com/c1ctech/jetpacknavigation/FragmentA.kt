@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import androidx.fragment.app.Fragment
-import androidx.navigation.Navigation.findNavController
+import androidx.navigation.findNavController
 
 
 class FragmentA : Fragment() {
@@ -21,7 +21,7 @@ class FragmentA : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val navController = findNavController(view)
+        val navController = view.findNavController()
         val button = view.findViewById<Button>(R.id.btnGotoFragmentB)
         button.setOnClickListener { navController.navigate(R.id.action_fragmentA_to_fragmentB) }
     }
